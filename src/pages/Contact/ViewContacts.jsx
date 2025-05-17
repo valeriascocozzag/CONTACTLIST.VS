@@ -10,13 +10,13 @@ export const ViewContacts = () => {
 
     useEffect(() => {
         const fetchContact = () => {
-            if (store.contactList) {
-                let currentContact = store.contactList.find(contact => contact.id === Number(id));
+            if (store.contacts) { // Cambiado contactList por contacts
+                let currentContact = store.contacts.find(contact => contact.id === Number(id));
                 setContact(currentContact);
             }
         };
         fetchContact();
-    }, [store.contactList, id]);
+    }, [store.contacts, id]); // Cambiado contactList por contacts
 
     const navigate = useNavigate();
 
